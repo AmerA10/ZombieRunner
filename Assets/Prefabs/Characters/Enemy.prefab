@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 666982070972744610}
   - component: {fileID: 666982070972744613}
   - component: {fileID: 751317877619613892}
+  - component: {fileID: 603978551}
+  - component: {fileID: 2430252519036617485}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -114,7 +116,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 2.25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -148,6 +150,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f7d093047e9f14ba6c3f48d4b7e327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoints: 100
+--- !u!95 &603978551
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666982070972744639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08bb80206b6d1c8499f2d744dda4dff9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2430252519036617485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666982070972744639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fa89e9accf3c1449c9bcc6b6aaa572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  damage: 40
 --- !u!1 &8605272452968912679
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 8605272452968912679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.468, z: 0.425}
-  m_LocalScale: {x: 0.40743, y: 0.35764882, z: 0.26506}
+  m_LocalScale: {x: 0.40743, y: 0.3576488, z: 0.26506}
   m_Children: []
   m_Father: {fileID: 666982070972744611}
   m_RootOrder: 0
