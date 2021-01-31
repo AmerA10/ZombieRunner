@@ -6,9 +6,10 @@ public class PlayerHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] int health = 100;
+    DeathHandle deathHandle;
     void Start()
     {
-        
+        deathHandle = GetComponent<DeathHandle>();
     }
 
     public void TakeDamage(int damage)
@@ -26,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void playerDeath()
     {
+        deathHandle.HandleDeath();
         Debug.Log("YOu are dead");
     }
 

@@ -11,7 +11,10 @@ public class EnemyAttack : MonoBehaviour
     {
         target = FindObjectOfType<PlayerHealth>();
     }
-
+    public void OnDamageTaken()
+    {
+        Debug.Log(name + " ALso know that damage was taken");
+    }
     // Update is called once per frame
     public void AttackHitEvent()//do damage to target
     {
