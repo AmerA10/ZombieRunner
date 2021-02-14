@@ -7,18 +7,19 @@ public class WeaponZoom : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Camera playerCamera;
-    [SerializeField] float zoomFOV;
-    [SerializeField] RigidbodyFirstPersonController firstPersonController;
+    [SerializeField] float zoomOutFOV = 60f;
+    [SerializeField] float zoomInFOV = 20f;
+    RigidbodyFirstPersonController firstPersonController;
     [SerializeField] float zoomOutSens = 2f;
     [SerializeField] float zoomInSens = 0.5f;
-    float defaultFOV;
+
 
 
     bool zoomedInToggle = false;
     void Start()
     {
-        firstPersonController = GetComponent<RigidbodyFirstPersonController>();
-        defaultFOV = playerCamera.fieldOfView;
+        firstPersonController = GetComponentInParent<RigidbodyFirstPersonController>();
+  
     
     }
 
@@ -29,14 +30,14 @@ public class WeaponZoom : MonoBehaviour
             if(!zoomedInToggle)
             {
                 zoomedInToggle = true;
-                playerCamera.fieldOfView = zoomFOV;
+                playerCamera.fieldOfView = zoomInFOV;
                 firstPersonController.mouseLook.XSensitivity = zoomInSens;
                 firstPersonController.mouseLook.YSensitivity = zoomInSens;
             }
             else
             {
                 zoomedInToggle = false;
-                playerCamera.fieldOfView = defaultFOV;
+                playerCamera.fieldOfView = zoomOutFOV;
                 firstPersonController.mouseLook.XSensitivity = zoomOutSens;
                 firstPersonController.mouseLook.YSensitivity = zoomOutSens;
             }

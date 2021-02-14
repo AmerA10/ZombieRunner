@@ -173,7 +173,6 @@ GameObject:
   - component: {fileID: 11400004}
   - component: {fileID: 6923347321255100341}
   - component: {fileID: 371410419}
-  - component: {fileID: 2083651376}
   - component: {fileID: 2083651371}
   m_Layer: 0
   m_Name: Player
@@ -322,23 +321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
---- !u!114 &2083651376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f4da1bf2fd94874eb281c28024bdedd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 2000000}
-  zoomFOV: 20
-  firstPersonController: {fileID: 0}
-  zoomOutSens: 2
-  zoomInSens: 0.5
 --- !u!114 &2083651371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +548,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 2083651371}
+    - target: {fileID: 2175374960343764285, guid: ada2587319194f542957a8c2ae277cb9,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 2000000}
     - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9,
         type: 3}
       propertyPath: m_RootOrder

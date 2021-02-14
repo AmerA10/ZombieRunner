@@ -2135,6 +2135,16 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1204987335}
+    - target: {fileID: 1237055492111053563, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337074158517269566, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2337074158517430302, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2170,8 +2180,36 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.005716063
       objectReference: {fileID: 0}
+    - target: {fileID: 5215841846783199097, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+--- !u!1 &1144039257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5215841846783199097, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+    type: 3}
+  m_PrefabInstance: {fileID: 1144039256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1144039258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144039257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4da1bf2fd94874eb281c28024bdedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  zoomOutFOV: 60
+  zoomInFOV: 20
+  zoomOutSens: 2
+  zoomInSens: 0.5
 --- !u!1 &1155300783
 GameObject:
   m_ObjectHideFlags: 0
