@@ -10,23 +10,37 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
+    [SerializeField] float timeBetweenShots = 0.5f;
+    bool canShoot = true;
+
+    private void OnEnable()
+    {
+        canShoot = true;
+    }
+
+
+
+
     void Update()
     {
-        if(Input.GetButtonDown("Fire1")) {
-            if(ammoSlot.GetAmmo() > 0)
+        if (Input.GetMouseButtonDown(0) && canShoot)
+        {
+            if (ammoSlot.GetAmmo(ammoType) > 0)
             {
-                Shoot();
-                
-            }
-          
-        }
+                StartCoroutine(Shoot());
 
+            }
+        }
     }
-    private void Shoot()
+    private IEnumerator Shoot()
     {
+        canShoot = false;//stops more coroutines from adding
         PlayMuzzleFlash();
         ProcessRayCast();
-        ammoSlot.ReduceAmmo();
+        ammoSlot.ReduceAmmo(ammoType);
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
     private void PlayMuzzleFlash()
     {
@@ -36,7 +50,7 @@ public class Weapon : MonoBehaviour
     private void ProcessRayCast()
     {
         RaycastHit hit;
-        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit))
+        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, shootingRange))
         {
             Debug.Log("Hit: " + hit.transform.name + " Type: ");
             CreateHitImpact(hit);

@@ -263,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2337074158996965286
 Transform:
   m_ObjectHideFlags: 0
@@ -347,11 +347,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
   shootingRange: 100
-  damage: 30
+  damage: 50
   muzzleFlash: {fileID: 5362606174990173754}
   hitEffect: {fileID: 7103616905402586354, guid: 1353750ab77d5214bbd4d940b297a171,
     type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 2
+  timeBetweenShots: 2.5
 --- !u!114 &2175374960343764285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,10 +367,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  zoomFOV: 0
   firstPersonController: {fileID: 0}
+  zoomOutFOV: 60
+  zoomInFOV: 20
   zoomOutSens: 2
-  zoomInSens: 0.5
+  zoomInSens: 1.5
 --- !u!1 &2337074158997199752
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2337074158996965288
 Transform:
   m_ObjectHideFlags: 0
