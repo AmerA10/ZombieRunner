@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity; //initialized to a infinitely large number, measures the distance to the target
     bool isProvoked;
+    EnemyHealth health;
 
     [SerializeField] float turnSpeed = 5f;
 
@@ -25,12 +26,19 @@ public class EnemyAI : MonoBehaviour
     {
         
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
     }
 
     
     void Update()
     {
         
+        if(health.GetIsDead())
+        {
+            this.enabled = false;
+            navMeshAgent.enabled = false;
+            isProvoked = false;
+        }
         distanceToTarget = Vector3.Distance(target.position, transform.position); //gets distance to target
         if(isProvoked)
         {
