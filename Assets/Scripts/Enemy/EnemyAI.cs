@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Transform target;
+    Transform target;
     [SerializeField] float chaseRange = 5f;//how close enemy to player to chase
     private Animator animator;
     NavMeshAgent navMeshAgent;
@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
 
     void Start()

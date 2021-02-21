@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera FPCamera;
@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
+    [SerializeField] TextMeshProUGUI ammoText;
     bool canShoot = true;
 
     private void OnEnable()
@@ -19,11 +20,9 @@ public class Weapon : MonoBehaviour
         canShoot = true;
     }
 
-
-
-
     void Update()
     {
+        DisplayAmmo();
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
             if (ammoSlot.GetAmmo(ammoType) > 0)
@@ -33,6 +32,13 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
+    }
+
     private IEnumerator Shoot()
     {
         canShoot = false;//stops more coroutines from adding
