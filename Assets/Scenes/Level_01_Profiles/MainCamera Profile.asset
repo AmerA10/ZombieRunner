@@ -18,10 +18,10 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 29.162928, y: 87.87153}
+    value: {x: 40.291393, y: 99}
   minLuminance:
     overrideState: 1
-    value: 0.9
+    value: 1.6
   maxLuminance:
     overrideState: 1
     value: 7.1
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
